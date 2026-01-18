@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+__pycache__/
+
+# Environment variables (SECRETS)
+.env
+
+# Data (raw & processed)
+data/raw/
+data/processed/
+
+# Logs
+logs/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Python
+*.pyc

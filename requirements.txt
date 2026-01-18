@@ -1,0 +1,16 @@
+telethon>=1.36.0                # Telegram scraper
+pandas>=2.0.0                   # Data handling
+numpy>=1.24.0                   # Numerical operations
+sqlalchemy>=2.0.0               # Database ORM
+psycopg2-binary>=2.9.0          # PostgreSQL driver
+dbt-core>=1.7.0                 # dbt core
+dbt-postgres>=1.7.0             # dbt adapter for Postgres
+dagster>=1.7.0                  # Dagster orchestration
+dagster-postgres>=0.23.0        # Dagster Postgres integration
+ultralytics>=8.2.0              # YOLOv8
+fastapi>=0.110.0                # API framework
+uvicorn>=0.27.0                 # ASGI server for FastAPI
+pydantic>=2.5.0                 # Data validation
+python-dotenv>=1.0.0            # Environment variables
+pytest>=7.4.0                   # Testing
+pytest-asyncio>=0.21.0          # Async testing
