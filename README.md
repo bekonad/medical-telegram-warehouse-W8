@@ -1,6 +1,4 @@
-Got it Kokos — here’s a **fully completed README** that covers **Task 1 and Task 2** in a consistent copy‑paste format. You can drop this straight into your repo as `README.md` before committing and merging.
 
----
 
 # Medical Telegram Warehouse – Task 1 & Task 2
 
