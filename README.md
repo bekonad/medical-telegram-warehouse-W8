@@ -1,11 +1,13 @@
 # Medical Telegram Data Warehouse Project (Week 8)
 
 This repository contains a full **ETL/ELT pipeline** for collecting, storing, and analyzing Telegram messages from Ethiopian medical and cosmetic channels. The project demonstrates data scraping, dbt transformations, star schema design, and integrity checks, aligned with the Week 8 KAIM rubric.
+=======
+>>>>>>> e00c73ac96a6e23f4e161f12366199200cb8549f
 
----
 
 ## Table of Contents
 - [Medical Telegram Data Warehouse Project (Week 8)](#medical-telegram-data-warehouse-project-week-8)
+- [This repository contains a full **ETL/ELT pipeline** for collecting, storing, and analyzing Telegram messages from Ethiopian medical and cosmetic channels. The project demonstrates data scraping, dbt transformations, star schema design, and integrity checks, aligned with the Week 8 KAIM rubric.](#this-repository-contains-a-full-etlelt-pipeline-for-collecting-storing-and-analyzing-telegram-messages-from-ethiopian-medical-and-cosmetic-channels-the-project-demonstrates-data-scraping-dbt-transformations-star-schema-design-and-integrity-checks-aligned-with-the-week-8-kaim-rubric)
   - [Table of Contents](#table-of-contents)
   - [Project Objective](#project-objective)
   - [Task 1: Data Scraping and Collection](#task-1-data-scraping-and-collection)
@@ -15,6 +17,9 @@ This repository contains a full **ETL/ELT pipeline** for collecting, storing, an
   - [Next Steps](#next-steps)
   - [Repository Organization](#repository-organization)
   - [Setup Instructions](#setup-instructions)
+  - [\<\<\<\<\<\<\< HEAD](#-head)
+- [Push branch](#push-branch)
+- [Merge into main](#merge-into-main)
 
 ---
 
@@ -179,4 +184,15 @@ dbt run
 dbt test
 ```
 
+<<<<<<< HEAD
 ---
+=======
+# Push branch
+git push origin task-2
+
+# Merge into main
+git checkout main
+git merge task-2
+git push origin main
+```
+>>>>>>> e00c73ac96a6e23f4e161f12366199200cb8549f
