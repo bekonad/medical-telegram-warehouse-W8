@@ -1,0 +1,47 @@
+version: 2
+
+models:
+
+  # Dimension table for Channels
+  - name: dim_channels
+    description: "Dimension table for channels"
+    columns:
+      - name: channel_key
+        description: "Primary key for channels"
+        tests:
+          - not_null
+          - unique
+
+  # Dimension table for Dates
+  - name: dim_dates
+    description: "Dimension table for dates"
+    columns:
+      - name: date_key
+        description: "Primary key for dates"
+        tests:
+          - not_null
+          - unique
+
+  # Fact table for messages
+  - name: fct_messages
+    description: "Fact table for messages"
+    columns:
+      - name: message_id
+        description: "Unique message identifier"
+        tests:
+          - not_null
+          - unique
+      - name: channel_key
+        description: "Channel key linking to dim_channels"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_channels')
+                field: channel_key
+      - name: date_key
+        description: "Date key linking to dim_dates"
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_key
