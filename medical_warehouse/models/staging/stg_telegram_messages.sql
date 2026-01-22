@@ -1,16 +1,13 @@
-{{ config(materialized='table') }}
+DROP TABLE IF EXISTS stg_telegram_messages;
 
-WITH source AS (
-    SELECT
-        message_id::int,
-        channel_username AS channel_name,
-        convert_from(text::bytea, 'UTF8') AS message_text,
-        date::timestamp AS message_date,
-        views::int AS view_count,
-        forwards::int AS forward_count,
-        CASE WHEN media_type IS NOT NULL THEN true ELSE false END AS has_image,
-        length(convert_from(text::bytea, 'UTF8')) AS message_length
-    FROM public.telegram_messages
-    WHERE text IS NOT NULL
-)
-SELECT * FROM source
+CREATE TABLE stg_telegram_messages AS
+SELECT
+    message_id::integer,
+    channel_username AS channel_name,
+    text AS message_text,
+    date::timestamp AS message_date,
+    views::integer AS view_count,
+    forwards::integer AS forward_count,
+    CASE WHEN media_type IS NOT NULL AND media_type <> '' THEN true ELSE false END AS has_image,
+    LENGTH(text) AS message_length
+FROM telegram_messages;

@@ -1,16 +1,15 @@
-{{ config(materialized='table') }}
+DROP TABLE IF EXISTS fct_messages;
 
+CREATE TABLE fct_messages AS
 SELECT
-    s.message_id,
+    m.message_id,
     c.channel_key,
     d.date_key,
-    s.message_text,
-    s.message_length,
-    s.view_count,
-    s.forward_count,
-    s.has_image
-FROM {{ ref('stg_telegram_messages') }} s
-JOIN {{ ref('dim_channels') }} c
-  ON s.channel_name = c.channel_name
-JOIN {{ ref('dim_dates') }} d
-  ON s.message_date::date = d.full_date
+    m.message_text,
+    m.message_length,
+    m.view_count,
+    m.forward_count,
+    m.has_image
+FROM stg_telegram_messages m
+LEFT JOIN dim_channels c ON c.channel_name = m.channel_name
+LEFT JOIN dim_dates d ON d.full_date = m.message_date::date;
