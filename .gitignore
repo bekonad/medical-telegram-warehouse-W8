@@ -1,4 +1,5 @@
 # Virtual environment
+.venv/
 venv/
 __pycache__/
 
@@ -11,11 +12,28 @@ data/processed/
 
 # Logs
 logs/
+*.log
 
 # OS / Editor
 .DS_Store
 Thumbs.db
 .vscode/
+.idea/
 
 # Python
 *.pyc
+
+# Telegram session files
+*.session
++251916621998.session
+
+# YOLO model / outputs
+yolov8n.pt
+output/
+
+# dbt artifacts
+target/
+dbt_modules/
+
+# Jupyter / IDE
+.ipynb_checkpoints/
