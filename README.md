@@ -231,8 +231,94 @@ LIMIT 10;
    - Message search
    - Visual statistics
 ```
+🧠 Task 4 — Analytical API (FastAPI)
+Objective
 
----
+Expose the transformed data warehouse through a RESTful API to answer analytical and business questions related to Telegram medical channels.
+
+📦 Tech Stack
+
+FastAPI — REST API framework
+
+SQLAlchemy — Database access layer
+
+PostgreSQL — Data warehouse
+
+dbt — Data modeling (facts & dimensions)
+
+📁 Project Structure
+api/
+├── main.py        # FastAPI app & routes
+├── database.py    # SQLAlchemy engine & session
+├── schemas.py     # Pydantic request/response models
+├── crud.py        # SQL query logic
+
+🚀 How to Run the API
+pip install fastapi uvicorn sqlalchemy psycopg2-binary
+uvicorn api.main:app --reload
+
+
+API will be available at:
+
+http://127.0.0.1:8000
+
+
+Interactive documentation:
+
+http://127.0.0.1:8000/docs
+
+📊 Implemented Endpoints
+1️⃣ Top Products
+
+Returns the most frequently mentioned medical terms/products.
+
+GET /api/reports/top-products?limit=10
+
+
+Response Example
+
+[
+  { "term": "paracetamol", "count": 134 },
+  { "term": "amoxicillin", "count": 97 }
+]
+
+2️⃣ Channel Activity
+
+Returns posting trends and activity metrics for a specific channel.
+
+GET /api/channels/{channel_name}/activity
+
+3️⃣ Message Search
+
+Searches messages containing a keyword.
+
+GET /api/search/messages?query=paracetamol&limit=20
+
+4️⃣ Visual Content Statistics
+
+Returns statistics about image usage detected by YOLO.
+
+GET /api/reports/visual-content
+
+✅ Features
+
+Data validation using Pydantic schemas
+
+Proper HTTP status codes & error handling
+
+Fully backed by dbt mart tables
+
+Auto-generated OpenAPI documentation
+
+📸 Deliverables
+
+FastAPI application
+
+4 analytical endpoints
+
+API documentation screenshots
+
+Example responses---
 
 ## Next Steps 🏁
 
