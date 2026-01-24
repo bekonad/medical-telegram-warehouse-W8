@@ -37,3 +37,7 @@ dbt_modules/
 
 # Jupyter / IDE
 .ipynb_checkpoints/
+session_name.session
+
++251916621998.session-journal
+.tmp_dagster_home_mvz465gb/
